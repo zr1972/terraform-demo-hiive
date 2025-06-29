@@ -88,6 +88,23 @@ Terraform’s Helm provider failed during deployment when an older version of He
 
 ---
 
-## 📬 Questions?
 
-Feel free to reach out or raise an issue if anything is unclear or if you want help modifying this setup.
+## 🧹 Cleanup Resources
+
+To avoid incurring unwanted charges, make sure to destroy all resources when you're done:
+
+### Destroy NGINX Deployment
+
+```bash
+cd learn-terraform-helm
+terraform destroy
+```
+
+### Destroy EKS Cluster
+
+```bash
+cd ../learn-terraform-provision-eks-cluster
+terraform destroy
+```
+
+Make sure to wait until the NGINX resources are fully deleted before destroying the EKS cluster to avoid any dependency issues.
